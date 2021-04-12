@@ -5,6 +5,10 @@
   font-family: 'IBM Plex Sans', sans-serif;
 }
 
+body {
+  background-color: #fafafa;
+}
+
 .container {
   height: 100vh;
   display: flex;
