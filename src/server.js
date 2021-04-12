@@ -56,8 +56,8 @@ app.get("/preview", async (req, res) => {
   const authCode = generateAuthCod();
   const qrcode = await generateQrcode(authCode);
   const date = [
-    new Date(initialDate).toLocaleDateString().replace(/\//g, "."),
-    new Date(finalDate).toLocaleDateString().replace(/\//g, "."),
+    new Date(initialDate).toLocaleDateString('pt-BR').replace(/\//g, "."),
+    new Date(finalDate).toLocaleDateString('pt-BR').replace(/\//g, "."),
   ];
   return res.render(
     "pdf",
