@@ -29,7 +29,7 @@
             </strong>, com carga horária de <%= data.hours %> hora(s), no período de <%= data.date[0] %> a <%=
                   data.date[1] %>.
           </p>
-          <p>Osasco, 10 de abril de 2021.</p>
+          <p>Osasco, <span id="data-atual"></span></p>
         </div>
         <div class="container-assinaturas">
           <div class="assinatura-diretoria">
@@ -61,11 +61,25 @@
     </div>
   </div>
 </body>
+
 <script>
+  window.onload = () => {
+    document.getElementById("data-atual").innerHTML = formatedDate();
+  }
+
   const gereratePdf = async (authCode) => {
     const url = new URL(window.location.href);
     pdfUrl = "/pdf" + url.search + "&authCode=" + authCode;
     window.open(pdfUrl, "_blank");
   }
+
+  const formatedDate = () => {
+    const date = new Date();
+    const day = date.getDate();
+    const month = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"][date.getMonth()];
+    const year = date.getFullYear();
+    return `${day} de ${month} de ${year}.`;
+  }
 </script>
+
 </html>
