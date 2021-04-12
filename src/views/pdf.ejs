@@ -11,7 +11,7 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container" onclick="gereratePdf('<%= data.authCode %>')">
     <div>
       <header></header>
       <main>
@@ -33,7 +33,7 @@
         </div>
         <div class="container-assinaturas">
           <div class="assinatura-diretoria">
-            <img src="/img/assinatura.png" width="200">
+            <img src="/img/assinatura.png" width="180">
             <small><strong>Simone Claudino de Carvalho Flores</strong></small>
             <small><strong>Escola Virtual</strong></small>
           </div>
@@ -61,5 +61,10 @@
     </div>
   </div>
 </body>
-
+<script>
+  const gereratePdf = async (authCode) => {
+    const url = new URL(window.location.href);
+    window.location = "/pdf" + url.search + "&authCode=" + authCode;
+  }
+</script>
 </html>
