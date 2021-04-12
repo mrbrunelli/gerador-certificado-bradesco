@@ -64,7 +64,8 @@
 <script>
   const gereratePdf = async (authCode) => {
     const url = new URL(window.location.href);
-    window.location = "/pdf" + url.search + "&authCode=" + authCode;
+    pdfUrl = "/pdf" + url.search + "&authCode=" + authCode;
+    window.open(pdfUrl, "_blank");
   }
 </script>
 </html>
