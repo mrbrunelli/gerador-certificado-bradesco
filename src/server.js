@@ -25,7 +25,7 @@ app.get("/pdf", async (req, res) => {
   const { authCode } = req.query;
   const baseURL = req.protocol + "://" + req.headers.host + "/";
   const url = new URL(req.url, baseURL);
-  const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
+  const browser = await puppeteer.launch({ args: ["--no-sandbox", "--lang=pt-BR"] });
   const page = await browser.newPage();
   await page.goto(baseURL + "preview" + url.search, {
     waitUntil: "networkidle0",
