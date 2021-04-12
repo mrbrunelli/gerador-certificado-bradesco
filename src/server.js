@@ -1,11 +1,13 @@
 const express = require("express");
 const path = require("path");
 const puppeteer = require("puppeteer");
+const cors = require("cors");
 const { generateQrcode, generateAuthCod, isEmpty } = require("./services");
 
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 app.use(express.static(__dirname + "/public"));
 
@@ -32,13 +34,14 @@ app.get("/pdf", async (req, res) => {
     printBackground: true,
     format: "A4",
     displayHeaderFooter: true,
-    footerTemplate: `<span style='font-size: 8px; margin-left: 20px;'>https://lms.ev.org.br/mpls/Web/Lms/Student/PrintCertificateDialog.aspx?${authCode}</span>`,
+    footerTemplate:
+      `<span style='font-size: 8px; margin-left: 20px;'>https://lms.ev.org.br/mpls/Web/Lms/Student/PrintCertificateDialog.aspx?${authCode}</span>`,
     margin: {
       left: 50,
       right: 50,
       top: 50,
-      bottom: 50
-    }
+      bottom: 50,
+    },
   });
   await browser.close();
   res.contentType("application/pdf");
