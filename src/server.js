@@ -27,7 +27,6 @@ app.get("/pdf", async (req, res) => {
   const url = new URL(req.url, baseURL);
   const browser = await puppeteer.launch({ args: ["--no-sandbox"] });
   const page = await browser.newPage();
-  console.log(baseURL + "preview" + url.search); //debug url heroku
   await page.goto(baseURL + "preview" + url.search, {
     waitUntil: "networkidle0",
   });

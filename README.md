@@ -11,6 +11,16 @@ Execute em modo produção
 npm start
 ```
 
+#### Importante
+> É necessário ter as libs do Chromiun instalado no ambiente de produção. 
+
+Para instalar no Heroku, utilize:
+```sh
+heroku buildpacks:add jontewks/puppeteer
+```
+
+Para mais informações: [puppeteer-heroku-buildpack](https://github.com/jontewks/puppeteer-heroku-buildpack)
+
 #### Screenshots
 Formulário
 ![](.github/print1.png)
