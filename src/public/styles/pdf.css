@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: serif;
+}
+
+.container {
+  width: 220mm;
+  height: 297mm;
+  margin: auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.certificado-conclusao {
+  margin: 1rem 0 3rem 0;
+  letter-spacing: 0.5rem;
+}
+
+.conteudo {
+  padding: 0 1rem 0 1rem;
+  text-indent: 6rem;
+  line-height: 2rem;
+}
+
+.container-assinaturas {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  padding: 0 1rem 0 1rem;
+}
+
+.assinatura-diretoria, .assinatura-aluno, .assinatura-digital {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: darkslategray;
+}
+
+.assinatura-digital small {
+  margin-top: 1rem;
+  font-size: 0.6rem;
+  text-align: right;
+  color: gray;
+}
+
+header, footer {
+  height: 2rem;
+  background-color: #dc1736;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  margin-top: 1rem;
+  padding: 0 3rem 0 3rem;
+}
+
+footer div {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles/home.css">
+  <title>Gerador de Certificado Bradesco</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="owner">
+      <h1>Gerador de Certificado Bradesco</h1>
+      <h3>By <a href="https://github.com/mrbrunelli" target="_blank">Matheus R. Brunelli</a></h3>
+    </div>
+    <%- include("github.ejs") %>
+    <form action="/pdf" method="post">
+      <div class="form-container">
+        <div>
+          <label for="name">Nome Completo</label>
+          <input type="text" name="name" id="name" placeholder="Digite seu nome" required>
+        </div>
+        <div>
+          <label for="course">Nome do Curso</label>
+          <input type="text" name="course" id="course" placeholder="Digite o nome do Curso" required>
+        </div>
+        <div>
+          <label for="hours">Quantidade de Horas</label>
+          <input type="number" name="hours" id="hours" placeholder="Digite a quantidade de horas" required>
+        </div>
+        <div>
+          <label for="initialDate">Data Inicial</label>
+          <input type="date" name="initialDate" id="initialDate" required>
+        </div>
+        <div>
+          <label for="finalDate">Data Final</label>
+          <input type="date" name="finalDate" id="finalDate" required>
+        </div>
+        <div>
+          <button type="submit">Enviar Dados</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

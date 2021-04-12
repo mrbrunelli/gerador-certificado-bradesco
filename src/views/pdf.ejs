@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/pdf.css">
+  <title>Performa</title>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      <header></header>
+      <main>
+        <div>
+          <%- include("logo.ejs") %>
+        </div>
+        <div class="certificado-conclusao">
+          <h3>Certificado de Conclusão</h3>
+        </div>
+        <div class="conteudo">
+          <p>Certificamos que <strong><%= data.name.toUpperCase() %></strong>, concluiu o curso de <strong><%= data.course.toUpperCase() %></strong>, com carga horária de <%= data.hours %> hora(s), no período de <%= data.date[0] %> a <%= data.date[1] %>.
+          </p>
+          <p>Osasco, 10 de abril de 2021.</p>
+        </div>
+        <div class="container-assinaturas">
+          <div class="assinatura-diretoria">
+            <img src="/img/assinatura.png" width="200">
+            <small><strong>Simone Claudino de Carvalho Flores</strong></small>
+            <small><strong>Escola Virtual</strong></small>
+          </div>
+          <div class="assinatura-aluno">
+            <small><strong><%= data.name %></strong></small>
+            <small><strong>Aluno (a)</strong></small>
+          </div>
+          <div class="assinatura-digital">
+            <img src="<%= data.qrcode %>" width="150">
+            <small>Código de Autenticidade: <%= data.authCode %> <br> ou utilize o QR Code no portal da
+                EV</small>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <small>www.ev.org.br</small>
+        <div>
+          <small>Fundação Bradesco</small>
+          <small>Cidade de Deus, s/no – Vila Yara – Osasco – SP – CEP 06029-900</small>
+          <small>CNPJ - 60.701.521/0001-06</small>
+        </div>
+      </footer>
+    </div>
+  </div>
+</body>
+<script src="/js/qrcode.js"></script>
+
+</html>
