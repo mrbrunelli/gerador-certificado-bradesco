@@ -9,6 +9,12 @@
   width: 220mm;
   height: 297mm;
   margin: auto;
+  cursor: pointer;
+  transition: 500ms;
+}
+
+.container:hover {
+  transform: scale(0.98);
 }
 
 main {
@@ -43,6 +49,10 @@ main {
   align-items: center;
   justify-content: center;
   color: darkslategray;
+}
+
+.assinatura-diretoria, .assinatura-aluno {
+  font-size: 0.8rem;
 }
 
 .assinatura-digital small {
