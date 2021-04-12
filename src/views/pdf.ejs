@@ -22,7 +22,12 @@
           <h3>Certificado de Conclusão</h3>
         </div>
         <div class="conteudo">
-          <p>Certificamos que <strong><%= data.name.toUpperCase() %></strong>, concluiu o curso de <strong><%= data.course.toUpperCase() %></strong>, com carga horária de <%= data.hours %> hora(s), no período de <%= data.date[0] %> a <%= data.date[1] %>.
+          <p>Certificamos que <strong>
+              <%= data.name.toUpperCase() %>
+            </strong>, concluiu o curso de <strong>
+              <%= data.course.toUpperCase() %>
+            </strong>, com carga horária de <%= data.hours %> hora(s), no período de <%= data.date[0] %> a <%=
+                  data.date[1] %>.
           </p>
           <p>Osasco, 10 de abril de 2021.</p>
         </div>
@@ -33,7 +38,9 @@
             <small><strong>Escola Virtual</strong></small>
           </div>
           <div class="assinatura-aluno">
-            <small><strong><%= data.name %></strong></small>
+            <small><strong>
+                <%= data.name %>
+              </strong></small>
             <small><strong>Aluno (a)</strong></small>
           </div>
           <div class="assinatura-digital">
@@ -54,6 +61,5 @@
     </div>
   </div>
 </body>
-<script src="/js/qrcode.js"></script>
 
 </html>

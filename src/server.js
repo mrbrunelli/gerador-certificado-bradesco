@@ -15,10 +15,6 @@ app.get("/", (req, res) => {
   return res.render("home");
 });
 
-app.get("*", (req, res) => {
-  return res.render("error");
-});
-
 app.post("/pdf", async (req, res) => {
   if (!req.body) {
     return res.render("error");
@@ -26,10 +22,9 @@ app.post("/pdf", async (req, res) => {
   const { name, course, hours, initialDate, finalDate } = req.body;
   const authCode = generateAuthCod();
   const qrcode = await generateQrcode(authCode);
-  //value.replace(/( )+/g, "_");
   const date = [
-    new Date(initialDate).toLocaleDateString().replace(/\//g, "."), 
-    new Date(finalDate).toLocaleDateString().replace(/\//g, ".")
+    new Date(initialDate).toLocaleDateString().replace(/\//g, "."),
+    new Date(finalDate).toLocaleDateString().replace(/\//g, "."),
   ];
   return res.render(
     "pdf",
@@ -46,4 +41,8 @@ app.post("/pdf", async (req, res) => {
   );
 });
 
-app.listen(3000);
+app.get("*", (req, res) => {
+  return res.render("error");
+});
+
+app.listen(3001);
