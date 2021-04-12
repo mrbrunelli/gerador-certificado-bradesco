@@ -18,7 +18,12 @@ const generateRandomString = (size) => {
   return Math.random().toString(36).substr(2, size);
 };
 
+const isEmpty = (obj) => {
+  return Object.keys(obj).length === 0;
+}
+
 module.exports = {
   generateQrcode,
   generateAuthCod,
+  isEmpty
 };
